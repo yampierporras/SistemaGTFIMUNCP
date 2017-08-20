@@ -1,0 +1,1137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SistemaGtEimUncpModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="idArea" />
+          </Key>
+          <Property Name="idArea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descArea" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Documento">
+          <Key>
+            <PropertyRef Name="idDocumento" />
+          </Key>
+          <Property Name="idDocumento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descDocumento" Type="varchar" MaxLength="50" />
+          <Property Name="tipoDocumento" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="fechaEmiDocumento" Type="datetime" />
+          <Property Name="emisionDocumento" Type="bit" Nullable="false" />
+          <Property Name="nomEgresado" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apePatEgresado" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apeMatEgresado" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="dniEgresado" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="codMatEgresado" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="condicionEgresado" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="fotografiaEgresado" Type="varbinary(max)" Nullable="false" />
+          <Property Name="nomResponsable" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apePatResponsable" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apeMatResponsable" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cargoResponsable" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="gradoAcaResponsable" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="nomResponsable2" Type="varchar" MaxLength="50" />
+          <Property Name="apePatResponsable2" Type="varchar" MaxLength="50" />
+          <Property Name="apeMatResponsable2" Type="varchar" MaxLength="50" />
+          <Property Name="cargoResponsable2" Type="varchar" MaxLength="100" />
+          <Property Name="gradoAcaResponsable2" Type="varchar" MaxLength="30" />
+          <Property Name="asuntoSolicitud" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="numRegSolicitud" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="fechaRecSolicitud" Type="datetime" Nullable="false" />
+          <Property Name="obsSolicitud" Type="varchar" MaxLength="200" />
+          <Property Name="reqSolicitud" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="validacionReqSolicitud" Type="bit" Nullable="false" />
+          <Property Name="usuario" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="nomUsuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apePatUsuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apeMatUsuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="dniUsuario" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="idEgresado" Type="int" Nullable="false" />
+          <Property Name="idResponsable" Type="int" Nullable="false" />
+          <Property Name="idResponsable2" Type="int" />
+          <Property Name="idSolicitud" Type="int" Nullable="false" />
+          <Property Name="idUsuario" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Egresado">
+          <Key>
+            <PropertyRef Name="idEgresado" />
+          </Key>
+          <Property Name="idEgresado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nomEgresado" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apePatEgresado" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apeMatEgresado" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="dniEgresado" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="codMatEgresado" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="condicionEgresado" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="domicilioEgresado" Type="varchar" MaxLength="100" />
+          <Property Name="celEgresado" Type="varchar" MaxLength="9" />
+          <Property Name="emailEgresado" Type="varchar" MaxLength="50" />
+          <Property Name="fotografiaEgresado" Type="varbinary(max)" Nullable="false" />
+          <Property Name="idFacultad" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Facultad">
+          <Key>
+            <PropertyRef Name="idFacultad" />
+          </Key>
+          <Property Name="idFacultad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nomFacultad" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PlanTesis">
+          <Key>
+            <PropertyRef Name="idPlanTesis" />
+          </Key>
+          <Property Name="idPlanTesis" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nomAsesor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apePatAsesor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apeMatAsesor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nomAsesor2" Type="varchar" MaxLength="50" />
+          <Property Name="apePatAsesor2" Type="varchar" MaxLength="50" />
+          <Property Name="apeMatAsesor2" Type="varchar" MaxLength="50" />
+          <Property Name="tituloTesis" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="fechaInscripcion" Type="datetime" Nullable="false" />
+          <Property Name="idEgresado" Type="int" Nullable="false" />
+          <Property Name="idSolicitud" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Procedimiento">
+          <Key>
+            <PropertyRef Name="idProcedimiento" />
+          </Key>
+          <Property Name="idProcedimiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descProcedimiento" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Requisito">
+          <Key>
+            <PropertyRef Name="idRequisito" />
+          </Key>
+          <Property Name="idRequisito" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="carRequisito" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="descRequisito" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Requisito_procedimiento">
+          <Key>
+            <PropertyRef Name="idReqProc" />
+          </Key>
+          <Property Name="idReqProc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="requisitosProc" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idProcedimiento" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Responsable">
+          <Key>
+            <PropertyRef Name="idResponsable" />
+          </Key>
+          <Property Name="idResponsable" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nomResponsable" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apePatResponsable" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apeMatResponsable" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cargoResponsable" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="gradoAcaResponsable" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="estadoResponsable" Type="bit" Nullable="false" />
+          <Property Name="celResponsable" Type="varchar" MaxLength="9" />
+          <Property Name="idArea" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Responsable_procedimiento">
+          <Key>
+            <PropertyRef Name="idResponsable" />
+            <PropertyRef Name="idProcedimiento" />
+          </Key>
+          <Property Name="idResponsable" Type="int" Nullable="false" />
+          <Property Name="idProcedimiento" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="idRol" />
+          </Key>
+          <Property Name="idRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descRol" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Solicitud">
+          <Key>
+            <PropertyRef Name="idSolicitud" />
+          </Key>
+          <Property Name="idSolicitud" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="asuntoSolicitud" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="numRegSolicitud" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="fechaRecSolicitud" Type="datetime" Nullable="false" />
+          <Property Name="obsSolicitud" Type="varchar" MaxLength="200" />
+          <Property Name="reqSolicitud" Type="varchar" MaxLength="30" />
+          <Property Name="validacionReqSolicitud" Type="bit" Nullable="false" />
+          <Property Name="estadoSolicitud" Type="bit" Nullable="false" />
+          <Property Name="atencionSolicitud" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="idReqProc" Type="int" Nullable="false" />
+          <Property Name="idEgresado" Type="int" Nullable="false" />
+          <Property Name="idUsuario" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usuario" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="contraseña" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="nomUsuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apePatUsuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apeMatUsuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="dniUsuario" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="celUsuario" Type="varchar" MaxLength="9" />
+          <Property Name="estadoUsuario" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario_rol">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+            <PropertyRef Name="idRol" />
+          </Key>
+          <Property Name="idUsuario" Type="int" Nullable="false" />
+          <Property Name="idRol" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Documento__idEgr__3B75D760">
+          <End Role="Egresado" Type="Self.Egresado" Multiplicity="1" />
+          <End Role="Documento" Type="Self.Documento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Egresado">
+              <PropertyRef Name="idEgresado" />
+            </Principal>
+            <Dependent Role="Documento">
+              <PropertyRef Name="idEgresado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Documento__idRes__3C69FB99">
+          <End Role="Responsable" Type="Self.Responsable" Multiplicity="1" />
+          <End Role="Documento" Type="Self.Documento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Responsable">
+              <PropertyRef Name="idResponsable" />
+            </Principal>
+            <Dependent Role="Documento">
+              <PropertyRef Name="idResponsable" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Documento__idRes__3D5E1FD2">
+          <End Role="Responsable" Type="Self.Responsable" Multiplicity="0..1" />
+          <End Role="Documento" Type="Self.Documento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Responsable">
+              <PropertyRef Name="idResponsable" />
+            </Principal>
+            <Dependent Role="Documento">
+              <PropertyRef Name="idResponsable2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Documento__idSol__3E52440B">
+          <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="1" />
+          <End Role="Documento" Type="Self.Documento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Solicitud">
+              <PropertyRef Name="idSolicitud" />
+            </Principal>
+            <Dependent Role="Documento">
+              <PropertyRef Name="idSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Documento__idUsu__3F466844">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Documento" Type="Self.Documento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Documento">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Egresado__idFacu__1ED998B2">
+          <End Role="Facultad" Type="Self.Facultad" Multiplicity="1" />
+          <End Role="Egresado" Type="Self.Egresado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facultad">
+              <PropertyRef Name="idFacultad" />
+            </Principal>
+            <Dependent Role="Egresado">
+              <PropertyRef Name="idFacultad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PlanTesis__idEgr__36B12243">
+          <End Role="Egresado" Type="Self.Egresado" Multiplicity="1" />
+          <End Role="PlanTesis" Type="Self.PlanTesis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Egresado">
+              <PropertyRef Name="idEgresado" />
+            </Principal>
+            <Dependent Role="PlanTesis">
+              <PropertyRef Name="idEgresado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PlanTesis__idSol__37A5467C">
+          <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="1" />
+          <End Role="PlanTesis" Type="Self.PlanTesis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Solicitud">
+              <PropertyRef Name="idSolicitud" />
+            </Principal>
+            <Dependent Role="PlanTesis">
+              <PropertyRef Name="idSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Requisito__idPro__2F10007B">
+          <End Role="Procedimiento" Type="Self.Procedimiento" Multiplicity="1" />
+          <End Role="Requisito_procedimiento" Type="Self.Requisito_procedimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Procedimiento">
+              <PropertyRef Name="idProcedimiento" />
+            </Principal>
+            <Dependent Role="Requisito_procedimiento">
+              <PropertyRef Name="idProcedimiento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Responsab__idAre__239E4DCF">
+          <End Role="Area" Type="Self.Area" Multiplicity="1" />
+          <End Role="Responsable" Type="Self.Responsable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Area">
+              <PropertyRef Name="idArea" />
+            </Principal>
+            <Dependent Role="Responsable">
+              <PropertyRef Name="idArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Responsab__idPro__29572725">
+          <End Role="Procedimiento" Type="Self.Procedimiento" Multiplicity="1" />
+          <End Role="Responsable_procedimiento" Type="Self.Responsable_procedimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Procedimiento">
+              <PropertyRef Name="idProcedimiento" />
+            </Principal>
+            <Dependent Role="Responsable_procedimiento">
+              <PropertyRef Name="idProcedimiento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Responsab__idRes__286302EC">
+          <End Role="Responsable" Type="Self.Responsable" Multiplicity="1" />
+          <End Role="Responsable_procedimiento" Type="Self.Responsable_procedimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Responsable">
+              <PropertyRef Name="idResponsable" />
+            </Principal>
+            <Dependent Role="Responsable_procedimiento">
+              <PropertyRef Name="idResponsable" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Solicitud__idEgr__32E0915F">
+          <End Role="Egresado" Type="Self.Egresado" Multiplicity="1" />
+          <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Egresado">
+              <PropertyRef Name="idEgresado" />
+            </Principal>
+            <Dependent Role="Solicitud">
+              <PropertyRef Name="idEgresado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Solicitud__idReq__31EC6D26">
+          <End Role="Requisito_procedimiento" Type="Self.Requisito_procedimiento" Multiplicity="1" />
+          <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Requisito_procedimiento">
+              <PropertyRef Name="idReqProc" />
+            </Principal>
+            <Dependent Role="Solicitud">
+              <PropertyRef Name="idReqProc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Solicitud__idUsu__33D4B598">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Solicitud">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario_r__idRol__173876EA">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+          <End Role="Usuario_rol" Type="Self.Usuario_rol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="idRol" />
+            </Principal>
+            <Dependent Role="Usuario_rol">
+              <PropertyRef Name="idRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario_r__idUsu__164452B1">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Usuario_rol" Type="Self.Usuario_rol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Usuario_rol">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SistemaGtEimUncpModelStoreContainer">
+          <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Documento" EntityType="Self.Documento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Egresado" EntityType="Self.Egresado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Facultad" EntityType="Self.Facultad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PlanTesis" EntityType="Self.PlanTesis" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Procedimiento" EntityType="Self.Procedimiento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Requisito" EntityType="Self.Requisito" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Requisito_procedimiento" EntityType="Self.Requisito_procedimiento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Responsable" EntityType="Self.Responsable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Responsable_procedimiento" EntityType="Self.Responsable_procedimiento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Solicitud" EntityType="Self.Solicitud" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario_rol" EntityType="Self.Usuario_rol" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Documento__idEgr__3B75D760" Association="Self.FK__Documento__idEgr__3B75D760">
+            <End Role="Egresado" EntitySet="Egresado" />
+            <End Role="Documento" EntitySet="Documento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Documento__idRes__3C69FB99" Association="Self.FK__Documento__idRes__3C69FB99">
+            <End Role="Responsable" EntitySet="Responsable" />
+            <End Role="Documento" EntitySet="Documento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Documento__idRes__3D5E1FD2" Association="Self.FK__Documento__idRes__3D5E1FD2">
+            <End Role="Responsable" EntitySet="Responsable" />
+            <End Role="Documento" EntitySet="Documento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Documento__idSol__3E52440B" Association="Self.FK__Documento__idSol__3E52440B">
+            <End Role="Solicitud" EntitySet="Solicitud" />
+            <End Role="Documento" EntitySet="Documento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Documento__idUsu__3F466844" Association="Self.FK__Documento__idUsu__3F466844">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Documento" EntitySet="Documento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Egresado__idFacu__1ED998B2" Association="Self.FK__Egresado__idFacu__1ED998B2">
+            <End Role="Facultad" EntitySet="Facultad" />
+            <End Role="Egresado" EntitySet="Egresado" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PlanTesis__idEgr__36B12243" Association="Self.FK__PlanTesis__idEgr__36B12243">
+            <End Role="Egresado" EntitySet="Egresado" />
+            <End Role="PlanTesis" EntitySet="PlanTesis" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PlanTesis__idSol__37A5467C" Association="Self.FK__PlanTesis__idSol__37A5467C">
+            <End Role="Solicitud" EntitySet="Solicitud" />
+            <End Role="PlanTesis" EntitySet="PlanTesis" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Requisito__idPro__2F10007B" Association="Self.FK__Requisito__idPro__2F10007B">
+            <End Role="Procedimiento" EntitySet="Procedimiento" />
+            <End Role="Requisito_procedimiento" EntitySet="Requisito_procedimiento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Responsab__idAre__239E4DCF" Association="Self.FK__Responsab__idAre__239E4DCF">
+            <End Role="Area" EntitySet="Area" />
+            <End Role="Responsable" EntitySet="Responsable" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Responsab__idPro__29572725" Association="Self.FK__Responsab__idPro__29572725">
+            <End Role="Procedimiento" EntitySet="Procedimiento" />
+            <End Role="Responsable_procedimiento" EntitySet="Responsable_procedimiento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Responsab__idRes__286302EC" Association="Self.FK__Responsab__idRes__286302EC">
+            <End Role="Responsable" EntitySet="Responsable" />
+            <End Role="Responsable_procedimiento" EntitySet="Responsable_procedimiento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Solicitud__idEgr__32E0915F" Association="Self.FK__Solicitud__idEgr__32E0915F">
+            <End Role="Egresado" EntitySet="Egresado" />
+            <End Role="Solicitud" EntitySet="Solicitud" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Solicitud__idReq__31EC6D26" Association="Self.FK__Solicitud__idReq__31EC6D26">
+            <End Role="Requisito_procedimiento" EntitySet="Requisito_procedimiento" />
+            <End Role="Solicitud" EntitySet="Solicitud" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Solicitud__idUsu__33D4B598" Association="Self.FK__Solicitud__idUsu__33D4B598">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Solicitud" EntitySet="Solicitud" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario_r__idRol__173876EA" Association="Self.FK__Usuario_r__idRol__173876EA">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Usuario_rol" EntitySet="Usuario_rol" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario_r__idUsu__164452B1" Association="Self.FK__Usuario_r__idUsu__164452B1">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Usuario_rol" EntitySet="Usuario_rol" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SistemaGtEimUncpModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="idArea" />
+          </Key>
+          <Property Name="idArea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descArea" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Responsable" Relationship="Self.FK__Responsab__idAre__239E4DCF" FromRole="Area" ToRole="Responsable" />
+        </EntityType>
+        <EntityType Name="Documento">
+          <Key>
+            <PropertyRef Name="idDocumento" />
+          </Key>
+          <Property Name="idDocumento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descDocumento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tipoDocumento" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="fechaEmiDocumento" Type="DateTime" Precision="3" />
+          <Property Name="emisionDocumento" Type="Boolean" Nullable="false" />
+          <Property Name="nomEgresado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apePatEgresado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apeMatEgresado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dniEgresado" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="codMatEgresado" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="condicionEgresado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="fotografiaEgresado" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="nomResponsable" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apePatResponsable" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apeMatResponsable" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cargoResponsable" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="gradoAcaResponsable" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nomResponsable2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apePatResponsable2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apeMatResponsable2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cargoResponsable2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="gradoAcaResponsable2" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="asuntoSolicitud" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numRegSolicitud" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fechaRecSolicitud" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="obsSolicitud" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="reqSolicitud" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="validacionReqSolicitud" Type="Boolean" Nullable="false" />
+          <Property Name="usuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nomUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apePatUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apeMatUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dniUsuario" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="idEgresado" Type="Int32" Nullable="false" />
+          <Property Name="idResponsable" Type="Int32" Nullable="false" />
+          <Property Name="idResponsable2" Type="Int32" />
+          <Property Name="idSolicitud" Type="Int32" Nullable="false" />
+          <Property Name="idUsuario" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Egresado" Relationship="Self.FK__Documento__idEgr__3B75D760" FromRole="Documento" ToRole="Egresado" />
+          <NavigationProperty Name="Responsable" Relationship="Self.FK__Documento__idRes__3C69FB99" FromRole="Documento" ToRole="Responsable" />
+          <NavigationProperty Name="Responsable1" Relationship="Self.FK__Documento__idRes__3D5E1FD2" FromRole="Documento" ToRole="Responsable" />
+          <NavigationProperty Name="Solicitud" Relationship="Self.FK__Documento__idSol__3E52440B" FromRole="Documento" ToRole="Solicitud" />
+          <NavigationProperty Name="Usuario1" Relationship="Self.FK__Documento__idUsu__3F466844" FromRole="Documento" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Egresado">
+          <Key>
+            <PropertyRef Name="idEgresado" />
+          </Key>
+          <Property Name="idEgresado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomEgresado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apePatEgresado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apeMatEgresado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dniEgresado" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="codMatEgresado" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="condicionEgresado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="domicilioEgresado" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="celEgresado" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="emailEgresado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fotografiaEgresado" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="idFacultad" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Documento" Relationship="Self.FK__Documento__idEgr__3B75D760" FromRole="Egresado" ToRole="Documento" />
+          <NavigationProperty Name="Facultad" Relationship="Self.FK__Egresado__idFacu__1ED998B2" FromRole="Egresado" ToRole="Facultad" />
+          <NavigationProperty Name="PlanTesis" Relationship="Self.FK__PlanTesis__idEgr__36B12243" FromRole="Egresado" ToRole="PlanTesis" />
+          <NavigationProperty Name="Solicitud" Relationship="Self.FK__Solicitud__idEgr__32E0915F" FromRole="Egresado" ToRole="Solicitud" />
+        </EntityType>
+        <EntityType Name="Facultad">
+          <Key>
+            <PropertyRef Name="idFacultad" />
+          </Key>
+          <Property Name="idFacultad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomFacultad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Egresado" Relationship="Self.FK__Egresado__idFacu__1ED998B2" FromRole="Facultad" ToRole="Egresado" />
+        </EntityType>
+        <EntityType Name="PlanTesis">
+          <Key>
+            <PropertyRef Name="idPlanTesis" />
+          </Key>
+          <Property Name="idPlanTesis" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomAsesor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apePatAsesor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apeMatAsesor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nomAsesor2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apePatAsesor2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apeMatAsesor2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tituloTesis" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fechaInscripcion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="idEgresado" Type="Int32" Nullable="false" />
+          <Property Name="idSolicitud" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Egresado" Relationship="Self.FK__PlanTesis__idEgr__36B12243" FromRole="PlanTesis" ToRole="Egresado" />
+          <NavigationProperty Name="Solicitud" Relationship="Self.FK__PlanTesis__idSol__37A5467C" FromRole="PlanTesis" ToRole="Solicitud" />
+        </EntityType>
+        <EntityType Name="Procedimiento">
+          <Key>
+            <PropertyRef Name="idProcedimiento" />
+          </Key>
+          <Property Name="idProcedimiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descProcedimiento" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Requisito_procedimiento" Relationship="Self.FK__Requisito__idPro__2F10007B" FromRole="Procedimiento" ToRole="Requisito_procedimiento" />
+          <NavigationProperty Name="Responsable" Relationship="Self.Responsable_procedimiento" FromRole="Procedimiento" ToRole="Responsable" />
+        </EntityType>
+        <EntityType Name="Requisito">
+          <Key>
+            <PropertyRef Name="idRequisito" />
+          </Key>
+          <Property Name="idRequisito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="carRequisito" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="descRequisito" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Requisito_procedimiento">
+          <Key>
+            <PropertyRef Name="idReqProc" />
+          </Key>
+          <Property Name="idReqProc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="requisitosProc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idProcedimiento" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Procedimiento" Relationship="Self.FK__Requisito__idPro__2F10007B" FromRole="Requisito_procedimiento" ToRole="Procedimiento" />
+          <NavigationProperty Name="Solicitud" Relationship="Self.FK__Solicitud__idReq__31EC6D26" FromRole="Requisito_procedimiento" ToRole="Solicitud" />
+        </EntityType>
+        <EntityType Name="Responsable">
+          <Key>
+            <PropertyRef Name="idResponsable" />
+          </Key>
+          <Property Name="idResponsable" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomResponsable" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apePatResponsable" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apeMatResponsable" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cargoResponsable" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="gradoAcaResponsable" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estadoResponsable" Type="Boolean" Nullable="false" />
+          <Property Name="celResponsable" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="idArea" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Area" Relationship="Self.FK__Responsab__idAre__239E4DCF" FromRole="Responsable" ToRole="Area" />
+          <NavigationProperty Name="Documento" Relationship="Self.FK__Documento__idRes__3C69FB99" FromRole="Responsable" ToRole="Documento" />
+          <NavigationProperty Name="Documento1" Relationship="Self.FK__Documento__idRes__3D5E1FD2" FromRole="Responsable" ToRole="Documento" />
+          <NavigationProperty Name="Procedimiento" Relationship="Self.Responsable_procedimiento" FromRole="Responsable" ToRole="Procedimiento" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="idRol" />
+          </Key>
+          <Property Name="idRol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descRol" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Usuario" Relationship="Self.Usuario_rol" FromRole="Rol" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Solicitud">
+          <Key>
+            <PropertyRef Name="idSolicitud" />
+          </Key>
+          <Property Name="idSolicitud" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="asuntoSolicitud" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numRegSolicitud" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fechaRecSolicitud" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="obsSolicitud" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="reqSolicitud" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="validacionReqSolicitud" Type="Boolean" Nullable="false" />
+          <Property Name="estadoSolicitud" Type="Boolean" Nullable="false" />
+          <Property Name="atencionSolicitud" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="idReqProc" Type="Int32" Nullable="false" />
+          <Property Name="idEgresado" Type="Int32" Nullable="false" />
+          <Property Name="idUsuario" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Documento" Relationship="Self.FK__Documento__idSol__3E52440B" FromRole="Solicitud" ToRole="Documento" />
+          <NavigationProperty Name="Egresado" Relationship="Self.FK__Solicitud__idEgr__32E0915F" FromRole="Solicitud" ToRole="Egresado" />
+          <NavigationProperty Name="PlanTesis" Relationship="Self.FK__PlanTesis__idSol__37A5467C" FromRole="Solicitud" ToRole="PlanTesis" />
+          <NavigationProperty Name="Requisito_procedimiento" Relationship="Self.FK__Solicitud__idReq__31EC6D26" FromRole="Solicitud" ToRole="Requisito_procedimiento" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Solicitud__idUsu__33D4B598" FromRole="Solicitud" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usuario1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="contraseña" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nomUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apePatUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apeMatUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dniUsuario" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="celUsuario" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="estadoUsuario" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Documento" Relationship="Self.FK__Documento__idUsu__3F466844" FromRole="Usuario" ToRole="Documento" />
+          <NavigationProperty Name="Solicitud" Relationship="Self.FK__Solicitud__idUsu__33D4B598" FromRole="Usuario" ToRole="Solicitud" />
+          <NavigationProperty Name="Rol" Relationship="Self.Usuario_rol" FromRole="Usuario" ToRole="Rol" />
+        </EntityType>
+        <Association Name="FK__Responsab__idAre__239E4DCF">
+          <End Role="Area" Type="Self.Area" Multiplicity="1" />
+          <End Role="Responsable" Type="Self.Responsable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Area">
+              <PropertyRef Name="idArea" />
+            </Principal>
+            <Dependent Role="Responsable">
+              <PropertyRef Name="idArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Documento__idEgr__3B75D760">
+          <End Role="Egresado" Type="Self.Egresado" Multiplicity="1" />
+          <End Role="Documento" Type="Self.Documento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Egresado">
+              <PropertyRef Name="idEgresado" />
+            </Principal>
+            <Dependent Role="Documento">
+              <PropertyRef Name="idEgresado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Documento__idRes__3C69FB99">
+          <End Role="Responsable" Type="Self.Responsable" Multiplicity="1" />
+          <End Role="Documento" Type="Self.Documento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Responsable">
+              <PropertyRef Name="idResponsable" />
+            </Principal>
+            <Dependent Role="Documento">
+              <PropertyRef Name="idResponsable" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Documento__idRes__3D5E1FD2">
+          <End Role="Responsable" Type="Self.Responsable" Multiplicity="0..1" />
+          <End Role="Documento" Type="Self.Documento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Responsable">
+              <PropertyRef Name="idResponsable" />
+            </Principal>
+            <Dependent Role="Documento">
+              <PropertyRef Name="idResponsable2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Documento__idSol__3E52440B">
+          <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="1" />
+          <End Role="Documento" Type="Self.Documento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Solicitud">
+              <PropertyRef Name="idSolicitud" />
+            </Principal>
+            <Dependent Role="Documento">
+              <PropertyRef Name="idSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Documento__idUsu__3F466844">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Documento" Type="Self.Documento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Documento">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Egresado__idFacu__1ED998B2">
+          <End Role="Facultad" Type="Self.Facultad" Multiplicity="1" />
+          <End Role="Egresado" Type="Self.Egresado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facultad">
+              <PropertyRef Name="idFacultad" />
+            </Principal>
+            <Dependent Role="Egresado">
+              <PropertyRef Name="idFacultad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PlanTesis__idEgr__36B12243">
+          <End Role="Egresado" Type="Self.Egresado" Multiplicity="1" />
+          <End Role="PlanTesis" Type="Self.PlanTesis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Egresado">
+              <PropertyRef Name="idEgresado" />
+            </Principal>
+            <Dependent Role="PlanTesis">
+              <PropertyRef Name="idEgresado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Solicitud__idEgr__32E0915F">
+          <End Role="Egresado" Type="Self.Egresado" Multiplicity="1" />
+          <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Egresado">
+              <PropertyRef Name="idEgresado" />
+            </Principal>
+            <Dependent Role="Solicitud">
+              <PropertyRef Name="idEgresado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PlanTesis__idSol__37A5467C">
+          <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="1" />
+          <End Role="PlanTesis" Type="Self.PlanTesis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Solicitud">
+              <PropertyRef Name="idSolicitud" />
+            </Principal>
+            <Dependent Role="PlanTesis">
+              <PropertyRef Name="idSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Requisito__idPro__2F10007B">
+          <End Role="Procedimiento" Type="Self.Procedimiento" Multiplicity="1" />
+          <End Role="Requisito_procedimiento" Type="Self.Requisito_procedimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Procedimiento">
+              <PropertyRef Name="idProcedimiento" />
+            </Principal>
+            <Dependent Role="Requisito_procedimiento">
+              <PropertyRef Name="idProcedimiento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Solicitud__idReq__31EC6D26">
+          <End Role="Requisito_procedimiento" Type="Self.Requisito_procedimiento" Multiplicity="1" />
+          <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Requisito_procedimiento">
+              <PropertyRef Name="idReqProc" />
+            </Principal>
+            <Dependent Role="Solicitud">
+              <PropertyRef Name="idReqProc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Solicitud__idUsu__33D4B598">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Solicitud">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Responsable_procedimiento">
+          <End Role="Procedimiento" Type="Self.Procedimiento" Multiplicity="*" />
+          <End Role="Responsable" Type="Self.Responsable" Multiplicity="*" />
+        </Association>
+        <Association Name="Usuario_rol">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="*" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="SistemaGtEimUncpEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Area" EntityType="Self.Area" />
+          <EntitySet Name="Documento" EntityType="Self.Documento" />
+          <EntitySet Name="Egresado" EntityType="Self.Egresado" />
+          <EntitySet Name="Facultad" EntityType="Self.Facultad" />
+          <EntitySet Name="PlanTesis" EntityType="Self.PlanTesis" />
+          <EntitySet Name="Procedimiento" EntityType="Self.Procedimiento" />
+          <EntitySet Name="Requisito" EntityType="Self.Requisito" />
+          <EntitySet Name="Requisito_procedimiento" EntityType="Self.Requisito_procedimiento" />
+          <EntitySet Name="Responsable" EntityType="Self.Responsable" />
+          <EntitySet Name="Rol" EntityType="Self.Rol" />
+          <EntitySet Name="Solicitud" EntityType="Self.Solicitud" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+          <AssociationSet Name="FK__Responsab__idAre__239E4DCF" Association="Self.FK__Responsab__idAre__239E4DCF">
+            <End Role="Area" EntitySet="Area" />
+            <End Role="Responsable" EntitySet="Responsable" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Documento__idEgr__3B75D760" Association="Self.FK__Documento__idEgr__3B75D760">
+            <End Role="Egresado" EntitySet="Egresado" />
+            <End Role="Documento" EntitySet="Documento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Documento__idRes__3C69FB99" Association="Self.FK__Documento__idRes__3C69FB99">
+            <End Role="Responsable" EntitySet="Responsable" />
+            <End Role="Documento" EntitySet="Documento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Documento__idRes__3D5E1FD2" Association="Self.FK__Documento__idRes__3D5E1FD2">
+            <End Role="Responsable" EntitySet="Responsable" />
+            <End Role="Documento" EntitySet="Documento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Documento__idSol__3E52440B" Association="Self.FK__Documento__idSol__3E52440B">
+            <End Role="Solicitud" EntitySet="Solicitud" />
+            <End Role="Documento" EntitySet="Documento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Documento__idUsu__3F466844" Association="Self.FK__Documento__idUsu__3F466844">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Documento" EntitySet="Documento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Egresado__idFacu__1ED998B2" Association="Self.FK__Egresado__idFacu__1ED998B2">
+            <End Role="Facultad" EntitySet="Facultad" />
+            <End Role="Egresado" EntitySet="Egresado" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PlanTesis__idEgr__36B12243" Association="Self.FK__PlanTesis__idEgr__36B12243">
+            <End Role="Egresado" EntitySet="Egresado" />
+            <End Role="PlanTesis" EntitySet="PlanTesis" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Solicitud__idEgr__32E0915F" Association="Self.FK__Solicitud__idEgr__32E0915F">
+            <End Role="Egresado" EntitySet="Egresado" />
+            <End Role="Solicitud" EntitySet="Solicitud" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PlanTesis__idSol__37A5467C" Association="Self.FK__PlanTesis__idSol__37A5467C">
+            <End Role="Solicitud" EntitySet="Solicitud" />
+            <End Role="PlanTesis" EntitySet="PlanTesis" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Requisito__idPro__2F10007B" Association="Self.FK__Requisito__idPro__2F10007B">
+            <End Role="Procedimiento" EntitySet="Procedimiento" />
+            <End Role="Requisito_procedimiento" EntitySet="Requisito_procedimiento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Solicitud__idReq__31EC6D26" Association="Self.FK__Solicitud__idReq__31EC6D26">
+            <End Role="Requisito_procedimiento" EntitySet="Requisito_procedimiento" />
+            <End Role="Solicitud" EntitySet="Solicitud" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Solicitud__idUsu__33D4B598" Association="Self.FK__Solicitud__idUsu__33D4B598">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Solicitud" EntitySet="Solicitud" />
+          </AssociationSet>
+          <AssociationSet Name="Responsable_procedimiento" Association="Self.Responsable_procedimiento">
+            <End Role="Procedimiento" EntitySet="Procedimiento" />
+            <End Role="Responsable" EntitySet="Responsable" />
+          </AssociationSet>
+          <AssociationSet Name="Usuario_rol" Association="Self.Usuario_rol">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SistemaGtEimUncpModelStoreContainer" CdmEntityContainer="SistemaGtEimUncpEntities">
+          <EntitySetMapping Name="Area">
+            <EntityTypeMapping TypeName="SistemaGtEimUncpModel.Area">
+              <MappingFragment StoreEntitySet="Area">
+                <ScalarProperty Name="idArea" ColumnName="idArea" />
+                <ScalarProperty Name="descArea" ColumnName="descArea" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Documento">
+            <EntityTypeMapping TypeName="SistemaGtEimUncpModel.Documento">
+              <MappingFragment StoreEntitySet="Documento">
+                <ScalarProperty Name="idDocumento" ColumnName="idDocumento" />
+                <ScalarProperty Name="descDocumento" ColumnName="descDocumento" />
+                <ScalarProperty Name="tipoDocumento" ColumnName="tipoDocumento" />
+                <ScalarProperty Name="fechaEmiDocumento" ColumnName="fechaEmiDocumento" />
+                <ScalarProperty Name="emisionDocumento" ColumnName="emisionDocumento" />
+                <ScalarProperty Name="nomEgresado" ColumnName="nomEgresado" />
+                <ScalarProperty Name="apePatEgresado" ColumnName="apePatEgresado" />
+                <ScalarProperty Name="apeMatEgresado" ColumnName="apeMatEgresado" />
+                <ScalarProperty Name="dniEgresado" ColumnName="dniEgresado" />
+                <ScalarProperty Name="codMatEgresado" ColumnName="codMatEgresado" />
+                <ScalarProperty Name="condicionEgresado" ColumnName="condicionEgresado" />
+                <ScalarProperty Name="fotografiaEgresado" ColumnName="fotografiaEgresado" />
+                <ScalarProperty Name="nomResponsable" ColumnName="nomResponsable" />
+                <ScalarProperty Name="apePatResponsable" ColumnName="apePatResponsable" />
+                <ScalarProperty Name="apeMatResponsable" ColumnName="apeMatResponsable" />
+                <ScalarProperty Name="cargoResponsable" ColumnName="cargoResponsable" />
+                <ScalarProperty Name="gradoAcaResponsable" ColumnName="gradoAcaResponsable" />
+                <ScalarProperty Name="nomResponsable2" ColumnName="nomResponsable2" />
+                <ScalarProperty Name="apePatResponsable2" ColumnName="apePatResponsable2" />
+                <ScalarProperty Name="apeMatResponsable2" ColumnName="apeMatResponsable2" />
+                <ScalarProperty Name="cargoResponsable2" ColumnName="cargoResponsable2" />
+                <ScalarProperty Name="gradoAcaResponsable2" ColumnName="gradoAcaResponsable2" />
+                <ScalarProperty Name="asuntoSolicitud" ColumnName="asuntoSolicitud" />
+                <ScalarProperty Name="numRegSolicitud" ColumnName="numRegSolicitud" />
+                <ScalarProperty Name="fechaRecSolicitud" ColumnName="fechaRecSolicitud" />
+                <ScalarProperty Name="obsSolicitud" ColumnName="obsSolicitud" />
+                <ScalarProperty Name="reqSolicitud" ColumnName="reqSolicitud" />
+                <ScalarProperty Name="validacionReqSolicitud" ColumnName="validacionReqSolicitud" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="nomUsuario" ColumnName="nomUsuario" />
+                <ScalarProperty Name="apePatUsuario" ColumnName="apePatUsuario" />
+                <ScalarProperty Name="apeMatUsuario" ColumnName="apeMatUsuario" />
+                <ScalarProperty Name="dniUsuario" ColumnName="dniUsuario" />
+                <ScalarProperty Name="idEgresado" ColumnName="idEgresado" />
+                <ScalarProperty Name="idResponsable" ColumnName="idResponsable" />
+                <ScalarProperty Name="idResponsable2" ColumnName="idResponsable2" />
+                <ScalarProperty Name="idSolicitud" ColumnName="idSolicitud" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Egresado">
+            <EntityTypeMapping TypeName="SistemaGtEimUncpModel.Egresado">
+              <MappingFragment StoreEntitySet="Egresado">
+                <ScalarProperty Name="idEgresado" ColumnName="idEgresado" />
+                <ScalarProperty Name="nomEgresado" ColumnName="nomEgresado" />
+                <ScalarProperty Name="apePatEgresado" ColumnName="apePatEgresado" />
+                <ScalarProperty Name="apeMatEgresado" ColumnName="apeMatEgresado" />
+                <ScalarProperty Name="dniEgresado" ColumnName="dniEgresado" />
+                <ScalarProperty Name="codMatEgresado" ColumnName="codMatEgresado" />
+                <ScalarProperty Name="condicionEgresado" ColumnName="condicionEgresado" />
+                <ScalarProperty Name="domicilioEgresado" ColumnName="domicilioEgresado" />
+                <ScalarProperty Name="celEgresado" ColumnName="celEgresado" />
+                <ScalarProperty Name="emailEgresado" ColumnName="emailEgresado" />
+                <ScalarProperty Name="fotografiaEgresado" ColumnName="fotografiaEgresado" />
+                <ScalarProperty Name="idFacultad" ColumnName="idFacultad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Facultad">
+            <EntityTypeMapping TypeName="SistemaGtEimUncpModel.Facultad">
+              <MappingFragment StoreEntitySet="Facultad">
+                <ScalarProperty Name="idFacultad" ColumnName="idFacultad" />
+                <ScalarProperty Name="nomFacultad" ColumnName="nomFacultad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlanTesis">
+            <EntityTypeMapping TypeName="SistemaGtEimUncpModel.PlanTesis">
+              <MappingFragment StoreEntitySet="PlanTesis">
+                <ScalarProperty Name="idPlanTesis" ColumnName="idPlanTesis" />
+                <ScalarProperty Name="nomAsesor" ColumnName="nomAsesor" />
+                <ScalarProperty Name="apePatAsesor" ColumnName="apePatAsesor" />
+                <ScalarProperty Name="apeMatAsesor" ColumnName="apeMatAsesor" />
+                <ScalarProperty Name="nomAsesor2" ColumnName="nomAsesor2" />
+                <ScalarProperty Name="apePatAsesor2" ColumnName="apePatAsesor2" />
+                <ScalarProperty Name="apeMatAsesor2" ColumnName="apeMatAsesor2" />
+                <ScalarProperty Name="tituloTesis" ColumnName="tituloTesis" />
+                <ScalarProperty Name="fechaInscripcion" ColumnName="fechaInscripcion" />
+                <ScalarProperty Name="idEgresado" ColumnName="idEgresado" />
+                <ScalarProperty Name="idSolicitud" ColumnName="idSolicitud" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Procedimiento">
+            <EntityTypeMapping TypeName="SistemaGtEimUncpModel.Procedimiento">
+              <MappingFragment StoreEntitySet="Procedimiento">
+                <ScalarProperty Name="idProcedimiento" ColumnName="idProcedimiento" />
+                <ScalarProperty Name="descProcedimiento" ColumnName="descProcedimiento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Requisito">
+            <EntityTypeMapping TypeName="SistemaGtEimUncpModel.Requisito">
+              <MappingFragment StoreEntitySet="Requisito">
+                <ScalarProperty Name="idRequisito" ColumnName="idRequisito" />
+                <ScalarProperty Name="carRequisito" ColumnName="carRequisito" />
+                <ScalarProperty Name="descRequisito" ColumnName="descRequisito" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Requisito_procedimiento">
+            <EntityTypeMapping TypeName="SistemaGtEimUncpModel.Requisito_procedimiento">
+              <MappingFragment StoreEntitySet="Requisito_procedimiento">
+                <ScalarProperty Name="idReqProc" ColumnName="idReqProc" />
+                <ScalarProperty Name="requisitosProc" ColumnName="requisitosProc" />
+                <ScalarProperty Name="idProcedimiento" ColumnName="idProcedimiento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Responsable">
+            <EntityTypeMapping TypeName="SistemaGtEimUncpModel.Responsable">
+              <MappingFragment StoreEntitySet="Responsable">
+                <ScalarProperty Name="idResponsable" ColumnName="idResponsable" />
+                <ScalarProperty Name="nomResponsable" ColumnName="nomResponsable" />
+                <ScalarProperty Name="apePatResponsable" ColumnName="apePatResponsable" />
+                <ScalarProperty Name="apeMatResponsable" ColumnName="apeMatResponsable" />
+                <ScalarProperty Name="cargoResponsable" ColumnName="cargoResponsable" />
+                <ScalarProperty Name="gradoAcaResponsable" ColumnName="gradoAcaResponsable" />
+                <ScalarProperty Name="estadoResponsable" ColumnName="estadoResponsable" />
+                <ScalarProperty Name="celResponsable" ColumnName="celResponsable" />
+                <ScalarProperty Name="idArea" ColumnName="idArea" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rol">
+            <EntityTypeMapping TypeName="SistemaGtEimUncpModel.Rol">
+              <MappingFragment StoreEntitySet="Rol">
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+                <ScalarProperty Name="descRol" ColumnName="descRol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Solicitud">
+            <EntityTypeMapping TypeName="SistemaGtEimUncpModel.Solicitud">
+              <MappingFragment StoreEntitySet="Solicitud">
+                <ScalarProperty Name="idSolicitud" ColumnName="idSolicitud" />
+                <ScalarProperty Name="asuntoSolicitud" ColumnName="asuntoSolicitud" />
+                <ScalarProperty Name="numRegSolicitud" ColumnName="numRegSolicitud" />
+                <ScalarProperty Name="fechaRecSolicitud" ColumnName="fechaRecSolicitud" />
+                <ScalarProperty Name="obsSolicitud" ColumnName="obsSolicitud" />
+                <ScalarProperty Name="reqSolicitud" ColumnName="reqSolicitud" />
+                <ScalarProperty Name="validacionReqSolicitud" ColumnName="validacionReqSolicitud" />
+                <ScalarProperty Name="estadoSolicitud" ColumnName="estadoSolicitud" />
+                <ScalarProperty Name="atencionSolicitud" ColumnName="atencionSolicitud" />
+                <ScalarProperty Name="idReqProc" ColumnName="idReqProc" />
+                <ScalarProperty Name="idEgresado" ColumnName="idEgresado" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="SistemaGtEimUncpModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="usuario1" ColumnName="usuario" />
+                <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+                <ScalarProperty Name="nomUsuario" ColumnName="nomUsuario" />
+                <ScalarProperty Name="apePatUsuario" ColumnName="apePatUsuario" />
+                <ScalarProperty Name="apeMatUsuario" ColumnName="apeMatUsuario" />
+                <ScalarProperty Name="dniUsuario" ColumnName="dniUsuario" />
+                <ScalarProperty Name="celUsuario" ColumnName="celUsuario" />
+                <ScalarProperty Name="estadoUsuario" ColumnName="estadoUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Responsable_procedimiento" TypeName="SistemaGtEimUncpModel.Responsable_procedimiento" StoreEntitySet="Responsable_procedimiento">
+            <EndProperty Name="Procedimiento">
+              <ScalarProperty Name="idProcedimiento" ColumnName="idProcedimiento" />
+            </EndProperty>
+            <EndProperty Name="Responsable">
+              <ScalarProperty Name="idResponsable" ColumnName="idResponsable" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Usuario_rol" TypeName="SistemaGtEimUncpModel.Usuario_rol" StoreEntitySet="Usuario_rol">
+            <EndProperty Name="Rol">
+              <ScalarProperty Name="idRol" ColumnName="idRol" />
+            </EndProperty>
+            <EndProperty Name="Usuario">
+              <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

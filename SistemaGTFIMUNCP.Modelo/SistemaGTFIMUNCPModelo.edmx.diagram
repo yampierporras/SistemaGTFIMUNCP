@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="403ccc7afc1f4c9691fc72971118ae66" Name="Diagram1">
+        <EntityTypeShape EntityType="SistemaGtEimUncpModel.Area" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaGtEimUncpModel.Documento" Width="1.5" PointX="7.5" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaGtEimUncpModel.Egresado" Width="1.5" PointX="3" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaGtEimUncpModel.Facultad" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaGtEimUncpModel.PlanTesis" Width="1.5" PointX="10.5" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaGtEimUncpModel.Procedimiento" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaGtEimUncpModel.Requisito" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaGtEimUncpModel.Requisito_procedimiento" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaGtEimUncpModel.Responsable" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaGtEimUncpModel.Rol" Width="1.5" PointX="0.75" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaGtEimUncpModel.Solicitud" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaGtEimUncpModel.Usuario" Width="1.5" PointX="3" PointY="17.375" IsExpanded="true" />
+        <AssociationConnector Association="SistemaGtEimUncpModel.FK__Responsab__idAre__239E4DCF" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaGtEimUncpModel.FK__Documento__idEgr__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaGtEimUncpModel.FK__Documento__idRes__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaGtEimUncpModel.FK__Documento__idRes__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaGtEimUncpModel.FK__Documento__idSol__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaGtEimUncpModel.FK__Documento__idUsu__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaGtEimUncpModel.FK__Egresado__idFacu__1ED998B2" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaGtEimUncpModel.FK__PlanTesis__idEgr__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaGtEimUncpModel.FK__Solicitud__idEgr__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaGtEimUncpModel.FK__PlanTesis__idSol__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaGtEimUncpModel.FK__Requisito__idPro__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaGtEimUncpModel.FK__Solicitud__idReq__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaGtEimUncpModel.FK__Solicitud__idUsu__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaGtEimUncpModel.Responsable_procedimiento" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaGtEimUncpModel.Usuario_rol" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
